@@ -2,6 +2,7 @@ import http from "http";
 import crypto from "crypto";
 
 import parseFrame from "./parseFrame.js";
+import createFrame from "./createFrame.js";
 
 class Flash {
     constructor({ server = http.createServer() } = {}) {
@@ -54,9 +55,10 @@ class Flash {
                 }
             }
 
-            this.handshake(request, socket);
-
             socket.event = (type, callback) => this.#event(type, callback);
+            socket.send = (message) => socket.write(createFrame(message));
+
+            this.handshake(request, socket);
 
             socket.on("data", (frameData) => {
                 const parsedFrame = parseFrame(frameData);
