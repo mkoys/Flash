@@ -1,7 +1,6 @@
 {
   "name": "flash",
   "version": "1.0.0",
-  "description": "",
   "main": "flash.js",
   "type": "module",
   "scripts": {
@@ -11,5 +10,14 @@
     "Flash"
   ],
   "author": "Mkoys",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkoys/Flash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mkoys/Flash/issues"
+  },
+  "homepage": "https://github.com/mkoys/Flash#readme",
+  "description": ""
 }
