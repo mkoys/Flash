@@ -13,7 +13,7 @@ class Flash {
         this.connections = [];
         this.disconnections = [];
     }
-    
+
     #createHash(key) {
         const sha1 = crypto.createHash('sha1');
         sha1.update(key + this.magic);
@@ -62,8 +62,19 @@ class Flash {
 
             socket.on("data", (frameData) => {
                 const parsedFrame = parseFrame(frameData);
+                let data = null;
 
-                console.log(parsedFrame);
+                try { data = JSON.parse(parsedFrame.content) }
+                catch (error) { console.log("Cant parse frame to JSON") }
+
+                if (data?.type && data?.content) {
+                    if (this.map.has(data.type)) {
+                        const handlers = this.map.get(data.type);
+                        for (const handler of handlers) { handler(data.content) }
+                    }
+                } else {
+                    console.log("No data type specified");
+                }
             });
 
             socket.on("end", () => {

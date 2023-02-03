@@ -1,4 +1,4 @@
 # Todo
 
 - [ ] Create README
-- [ ] Event triggers
+- [x] Event triggers
