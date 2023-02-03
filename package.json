@@ -1,0 +1,15 @@
+{
+  "name": "flash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "flash.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Flash"
+  ],
+  "author": "Mkoys",
+  "license": "MIT"
+}
