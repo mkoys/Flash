@@ -19,5 +19,5 @@
     "url": "https://github.com/mkoys/Flash/issues"
   },
   "homepage": "https://github.com/mkoys/Flash#readme",
-  "description": ""
+  "description": "A simple WebSocket server written in JavaScript"
 }
