@@ -98,6 +98,8 @@ server.event("connection", (request, socket) => {
     });
 });
 ```
+- **type**: Type of event (String)
+- **callback**: Callback function for event with content as parameter
 
 ### Socket Send
 Sends a message to the client. The message parameter can be any type that can be serialized to JSON.
@@ -108,6 +110,7 @@ server.event("connection", (request, socket) => {
     socket.send({message: "Welcome"});
 });
 ```
+- **content**: Content of message
 
 ## Contributing
 Bug reports and pull requests are welcome. Please open an issue if you encounter any problems.
