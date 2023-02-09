@@ -64,6 +64,10 @@ class Flash {
                 const parsedFrame = parseFrame(frameData);
                 let data = null;
 
+                if(parseInt(parsedFrame.opcode, 2) == 8) {
+                    return socket.end();
+                }
+
                 try { data = JSON.parse(parsedFrame.content) }
                 catch (error) { console.log("Cant parse frame to JSON") }
 
