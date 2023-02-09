@@ -64,7 +64,8 @@ class Flash {
                 const parsedFrame = parseFrame(frameData);
                 let data = null;
 
-                if(parseInt(parsedFrame.opcode, 2) == 8) {
+                if (parseInt(parsedFrame.opcode, 2) == 8) {
+                    for (const disconnections of this.disconnections) { disconnections(request, socket) }
                     return socket.end();
                 }
 
