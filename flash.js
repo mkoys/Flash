@@ -95,8 +95,11 @@ class Flash {
             case "handshake":
                 this.handshake = callback;
                 break;
-            case "connection":
+            case "connect":
                 this.connections.push(callback);
+                break;
+            case "disconnect":
+                this.disconnections.push(callback);
                 break;
             default:
                 break;
