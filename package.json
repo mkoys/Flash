@@ -1,6 +1,6 @@
 {
   "name": "@mkoys/flash",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "flash.js",
   "type": "module",
   "scripts": {
